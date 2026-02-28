@@ -1,65 +1,120 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+
+const pages = [
+  {
+    href: "/believe",
+    emoji: "🧭",
+    title: "What to Believe & What Not To",
+    desc: "A simple framework for navigating information in uncertain times.",
+    tag: "Framework",
+    tagBg: "var(--tag-green)",
+    tagColor: "var(--tag-green-text)",
+  },
+  {
+    href: "/do-now",
+    emoji: "⚡",
+    title: "What to Do Right Now",
+    desc: "Concrete, actionable steps you can take today.",
+    tag: "Action",
+    tagBg: "var(--tag-yellow)",
+    tagColor: "var(--tag-yellow-text)",
+  },
+  {
+    href: "/news",
+    emoji: "📰",
+    title: "News Threads to Follow",
+    desc: "Curated sources worth your attention. Quality over quantity.",
+    tag: "Sources",
+    tagBg: "var(--tag-blue)",
+    tagColor: "var(--tag-blue-text)",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="max-w-2xl mx-auto px-6 py-16">
+      <div className="mb-12">
+        <h1
+          className="text-4xl font-bold tracking-tight mb-3"
+          style={{ color: "var(--foreground)" }}
+        >
+          Info Hub
+        </h1>
+        <p
+          className="text-base leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
+          A calm, simple guide to staying informed without losing your mind.
+          <br />
+          Pick a topic below to get started.
+        </p>
+      </div>
+
+      <div
+        className="h-px w-full mb-10"
+        style={{ backgroundColor: "var(--border)" }}
+      />
+
+      <div className="space-y-3">
+        {pages.map((page) => (
+          <Link
+            key={page.href}
+            href={page.href}
+            className="rounded-lg p-5 border flex items-start gap-4 transition-colors block"
+            style={{ borderColor: "var(--border)" }}
+            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+                "var(--sidebar-bg)";
+            }}
+            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+                "transparent";
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <span className="text-2xl mt-0.5">{page.emoji}</span>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                <p
+                  className="font-semibold text-sm"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  {page.title}
+                </p>
+                <span
+                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
+                  style={{ backgroundColor: page.tagBg, color: page.tagColor }}
+                >
+                  {page.tag}
+                </span>
+              </div>
+              <p className="text-sm" style={{ color: "var(--muted)" }}>
+                {page.desc}
+              </p>
+            </div>
+            <span className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+              →
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <div
+        className="mt-12 rounded-lg p-5 border"
+        style={{
+          backgroundColor: "var(--sidebar-bg)",
+          borderColor: "var(--border)",
+        }}
+      >
+        <p className="text-sm" style={{ color: "var(--muted)" }}>
+          <strong style={{ color: "var(--foreground)" }}>
+            Why this exists:
+          </strong>{" "}
+          In a world of information overload, having a simple, reliable
+          reference helps you make better decisions. This is that reference.
+        </p>
+      </div>
     </div>
   );
 }
