@@ -1,80 +1,85 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navItems = [
-  {
-    href: "/believe",
-    label: "What to Believe",
-    emoji: "🧭",
-  },
-  {
-    href: "/do-now",
-    label: "What to Do Right Now",
-    emoji: "⚡",
-  },
-  {
-    href: "/news",
-    label: "News Threads to Follow",
-    emoji: "📰",
-  },
+  { href: "/#situation", label: "The situation" },
+  { href: "/#believe", label: "What to believe" },
+  { href: "/#do-now", label: "What we're doing" },
+  { href: "/#news", label: "News to follow" },
 ];
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <aside
-      className="fixed left-0 top-0 h-screen w-60 flex flex-col border-r"
-      style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
-    >
-      <div className="px-4 py-5">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-lg">📋</span>
-          <span
-            className="text-sm font-semibold tracking-tight"
-            style={{ color: "var(--foreground)" }}
-          >
-            Info Hub
-          </span>
-        </Link>
-      </div>
+    <>
+      {/* Mobile hamburger */}
+      <button
+        onClick={() => setMobileOpen(!mobileOpen)}
+        className="fixed top-4 left-4 z-50 md:hidden flex flex-col gap-1 p-2 rounded-md border"
+        style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
+        aria-label="Toggle menu"
+      >
+        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
+        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
+        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
+      </button>
 
-      <nav className="flex-1 px-2 space-y-0.5">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href;
-          return (
-            <Link
+      {/* Backdrop */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/20 md:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed left-0 top-0 h-screen w-60 flex flex-col border-r z-40 transition-transform duration-200 ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
+        style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
+      >
+        <div className="px-4 py-5">
+          <Link href="/" className="flex items-center gap-2 group">
+            <span
+              className="text-sm font-semibold tracking-tight"
+              style={{ color: "var(--foreground)" }}
+            >
+              UAE Tactical Guide
+            </span>
+          </Link>
+        </div>
+
+        <nav className="flex-1 px-2 space-y-0.5">
+          {navItems.map((item) => (
+            <a
               key={item.href}
               href={item.href}
+              onClick={() => setMobileOpen(false)}
               className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-md text-sm transition-colors"
-              style={{
-                backgroundColor: isActive ? "var(--sidebar-hover)" : "transparent",
-                color: isActive ? "var(--foreground)" : "var(--muted)",
-                fontWeight: isActive ? 600 : 400,
-              }}
+              style={{ color: "var(--muted)" }}
               onMouseEnter={(e) => {
-                if (!isActive)
-                  e.currentTarget.style.backgroundColor = "var(--sidebar-hover)";
+                e.currentTarget.style.backgroundColor = "var(--sidebar-hover)";
               }}
               onMouseLeave={(e) => {
-                if (!isActive) e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
-              <span className="text-base">{item.emoji}</span>
               <span>{item.label}</span>
-            </Link>
-          );
-        })}
-      </nav>
+            </a>
+          ))}
+        </nav>
 
-      <div
-        className="px-4 py-4 text-xs border-t"
-        style={{ color: "var(--muted)", borderColor: "var(--border)" }}
-      >
-        Stay informed. Stay calm.
-      </div>
-    </aside>
+        <div
+          className="px-4 py-4 text-xs border-t"
+          style={{ color: "var(--muted)", borderColor: "var(--border)" }}
+        >
+          Stay safe. Stay informed.
+        </div>
+      </aside>
+    </>
   );
 }

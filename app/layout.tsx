@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Info Hub",
-  description: "Stay informed. Stay calm.",
+  title: "UAE Tactical Guide",
+  description: "A personal safety and information guide for Abu Dhabi.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Sidebar />
-        <main className="ml-60 min-h-screen">{children}</main>
+        <main className="ml-0 md:ml-60 min-h-screen">{children}</main>
       </body>
     </html>
   );
