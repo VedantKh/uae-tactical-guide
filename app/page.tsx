@@ -17,8 +17,7 @@ export default function Home() {
           className="text-base leading-relaxed"
           style={{ color: "var(--muted)" }}
         >
-          I&apos;m in Abu Dhabi with my parents, and have been thinking about
-          the best way to navigate the current situation.
+          A report and guide for people in UAE navigating the situation due to the US/Iran conflict.
         </p>
       </div>
 
@@ -32,126 +31,32 @@ export default function Home() {
         {/* Toggle 1: The situation */}
         <ToggleBlock id="situation" title="The situation">
           <div className="space-y-4 text-sm" style={{ color: "var(--foreground)" }}>
-            <p style={{ color: "var(--muted)" }}>
-              Iran launched missile strikes targeting the UAE. UAE air defence systems intercepted
-              the majority of incoming projectiles. Debris has been reported in parts of Abu Dhabi
-              and Dubai. One civilian death has been confirmed. Aviation has been disrupted, with
-              flights grounded or diverted at multiple airports.
+            <p className="text-xs font-medium mb-3" style={{ color: "var(--muted)" }}>
+              As of Sunday 1 Mar 2026 (UAE)
             </p>
-
-            <div>
-              <p className="font-semibold mb-2">Emergency numbers</p>
-              <div className="space-y-1.5">
-                {[
-                  { label: "Police", number: "999" },
-                  { label: "Ambulance", number: "998" },
-                  { label: "Fire / Civil Defence", number: "997" },
-                ].map((item) => (
-                  <div key={item.number} className="flex items-center gap-3">
-                    <span style={{ color: "var(--muted)" }}>{item.label}</span>
-                    <a
-                      href={`tel:${item.number}`}
-                      className="font-mono font-semibold px-2 py-0.5 rounded"
-                      style={{
-                        backgroundColor: "var(--tag-red)",
-                        color: "var(--tag-red-text)",
-                      }}
-                    >
-                      {item.number}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ul className="space-y-2 ml-1" style={{ color: "var(--muted)" }}>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 flex-shrink-0">&#8226;</span>
+                <span>Iran <a href="https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>launched ballistic missiles</a> toward multiple Gulf locations, following U.S. and Israeli strikes on Iran, escalating the regional conflict.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 flex-shrink-0">&#8226;</span>
+                <span>UAE Ministry of Defence (via WAM) said UAE air defences <a href="https://www.wam.ae/en/article/173jo13-uae-air-defences-intercept-137-missiles-209-drones" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>intercepted 132 missiles and 195 drones</a>.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 flex-shrink-0">&#8226;</span>
+                <span><a href="https://gulfnews.com/uae/pakistani-national-in-uae-dies-as-iranian-missiles-intercepted-amid-us-israel-strikes-1.500458618" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>One civilian was killed in Abu Dhabi</a> from falling debris. 4 people were injured in Dubai after debris caused a <a href="https://www.reuters.com/world/middle-east/iran-missiles-brings-war-gulf-doorstep-hardens-support-usisrael-campaign-2026-02-28/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>building fire on Palm Jumeirah</a>.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 flex-shrink-0">&#8226;</span>
+                <span>Dubai International (DXB) and Abu Dhabi airports <a href="https://www.thenationalnews.com/business/aviation/2026/02/28/airlines-suspend-flights-amid-us-israel-strikes-on-iran-and-gulf-airspace-closures/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>suspended operations</a>, multiple airlines halted routes, and UAE airspace was closed nationally.</span>
+              </li>
+            </ul>
           </div>
         </ToggleBlock>
 
-        {/* Toggle 2: What is worth believing and what is not */}
-        <ToggleBlock id="believe" title="What is worth believing and what is not">
-          <div className="space-y-5 text-sm">
-            {/* Trust */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span
-                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
-                  style={{ backgroundColor: "var(--tag-green)", color: "var(--tag-green-text)" }}
-                >
-                  Trust
-                </span>
-                <span className="font-semibold" style={{ color: "var(--foreground)" }}>
-                  Official UAE channels only
-                </span>
-              </div>
-              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span><strong style={{ color: "var(--foreground)" }}>Ministry of Defence / WAM</strong> &mdash; Official military and state news agency</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span><strong style={{ color: "var(--foreground)" }}>NCEMA</strong> &mdash; National Emergency Crisis and Disaster Management Authority</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span><strong style={{ color: "var(--foreground)" }}>Ministry of Interior (MOI)</strong> &mdash; Public safety updates</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span><strong style={{ color: "var(--foreground)" }}>Abu Dhabi Police / Dubai Police</strong> &mdash; Local situation and road updates</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Doubt */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span
-                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
-                  style={{ backgroundColor: "var(--tag-red)", color: "var(--tag-red-text)" }}
-                >
-                  Doubt
-                </span>
-                <span className="font-semibold" style={{ color: "var(--foreground)" }}>
-                  Do not amplify
-                </span>
-              </div>
-              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
-                {[
-                  "Unverified videos or photos circulating on WhatsApp / social media",
-                  "Screenshots of tweets or messages \u2014 easily fabricated",
-                  "Anonymous \u201Cinsider\u201D accounts with no accountability",
-                  "Content designed to provoke extreme emotion (outrage, panic)",
-                  "Breaking claims in the first 30 minutes \u2014 initial reports are almost always wrong",
-                ].map((text, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1 flex-shrink-0">&#8226;</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Credibility Test */}
-            <div
-              className="rounded-lg p-4 border"
-              style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
-            >
-              <p className="font-semibold text-sm mb-2" style={{ color: "var(--foreground)" }}>
-                Quick credibility test
-              </p>
-              <ol className="space-y-1 text-sm list-decimal list-inside" style={{ color: "var(--muted)" }}>
-                <li>Who is saying this? Can I verify their identity?</li>
-                <li>What&apos;s the original source? Can I find it?</li>
-                <li>Are other credible outlets reporting the same thing?</li>
-                <li>Am I being asked to share this urgently? (Red flag.)</li>
-                <li>Does this confirm what I already believe? (Check bias.)</li>
-              </ol>
-            </div>
-          </div>
-        </ToggleBlock>
-
-        {/* Toggle 3: What we're doing right now */}
-        <ToggleBlock id="do-now" title="What we're doing right now" defaultOpen>
+        {/* Toggle 2: What to do */}
+        <ToggleBlock id="do-now" title="What to do" defaultOpen>
           <div className="space-y-5 text-sm">
             {/* First 60 seconds */}
             <div>
@@ -242,72 +147,109 @@ export default function Home() {
           </div>
         </ToggleBlock>
 
-        {/* Toggle 4: What news to follow */}
-        <ToggleBlock id="news" title="What news to follow">
-          <div className="space-y-4 text-sm">
-            <p style={{ color: "var(--muted)" }}>
-              Stick to official UAE government channels. Everything else is secondary.
-            </p>
-
-            <div className="space-y-2">
-              {[
-                {
-                  name: "WAM (Emirates News Agency)",
-                  desc: "Official state news agency \u2014 first source for government statements",
-                },
-                {
-                  name: "NCEMA",
-                  desc: "National Emergency Crisis and Disaster Management Authority \u2014 safety directives and alerts",
-                },
-                {
-                  name: "Ministry of Interior (MOI)",
-                  desc: "Public safety updates, road closures, curfews",
-                },
-                {
-                  name: "Abu Dhabi Police",
-                  desc: "Local law enforcement updates for Abu Dhabi emirate",
-                },
-                {
-                  name: "Dubai Police",
-                  desc: "Local law enforcement updates for Dubai emirate",
-                },
-              ].map((source, i) => (
-                <div
-                  key={i}
-                  className="rounded-lg p-3 border"
-                  style={{ borderColor: "var(--border)" }}
+        {/* Toggle 3: What is worth believing */}
+        <ToggleBlock id="believe" title="What is worth believing">
+          <div className="space-y-5 text-sm">
+            {/* Trust */}
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
+                  style={{ backgroundColor: "var(--tag-green)", color: "var(--tag-green-text)" }}
                 >
-                  <p className="font-medium" style={{ color: "var(--foreground)" }}>
-                    {source.name}
-                  </p>
-                  <p className="mt-0.5" style={{ color: "var(--muted)" }}>
-                    {source.desc}
-                  </p>
-                </div>
-              ))}
+                  Trust
+                </span>
+                <span className="font-semibold" style={{ color: "var(--foreground)" }}>
+                  Official UAE channels
+                </span>
+              </div>
+              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>Ministry of Defence / WAM</strong> &mdash; Official military and state news agency</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>NCEMA</strong> &mdash; National Emergency Crisis and Disaster Management Authority</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>Ministry of Interior (MOI)</strong> &mdash; Public safety updates</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>Abu Dhabi Police / Dubai Police</strong> &mdash; Local situation and road updates</span>
+                </li>
+              </ul>
             </div>
 
+            {/* Also credible — international */}
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
+                  style={{ backgroundColor: "var(--tag-green)", color: "var(--tag-green-text)" }}
+                >
+                  Also credible
+                </span>
+                <span className="font-semibold" style={{ color: "var(--foreground)" }}>
+                  International outlets
+                </span>
+              </div>
+              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>Reuters / AP</strong> &mdash; Wire services with journalists on the ground; usually first with verified facts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span><strong style={{ color: "var(--foreground)" }}>Ground News</strong> &mdash; Aggregates coverage from multiple sources; shows bias ratings and blind spots. Good for getting a balanced view on the broader picture.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Doubt */}
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="inline-block px-2 py-0.5 rounded text-xs font-medium"
+                  style={{ backgroundColor: "var(--tag-red)", color: "var(--tag-red-text)" }}
+                >
+                  Doubt
+                </span>
+                <span className="font-semibold" style={{ color: "var(--foreground)" }}>
+                  Do not amplify
+                </span>
+              </div>
+              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
+                {[
+                  "Unverified videos or photos circulating on WhatsApp / social media",
+                  "Screenshots of tweets or messages \u2014 easily fabricated",
+                  "Anonymous \u201Cinsider\u201D accounts with no accountability",
+                  "Content designed to provoke extreme emotion (outrage, panic)",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-1 flex-shrink-0">&#8226;</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Credibility Test */}
             <div
               className="rounded-lg p-4 border"
               style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
             >
-              <p className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
-                What NOT to follow or share
+              <p className="font-semibold text-sm mb-2" style={{ color: "var(--foreground)" }}>
+                Quick credibility test
               </p>
-              <ul className="space-y-1 ml-1" style={{ color: "var(--muted)" }}>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 flex-shrink-0">&#8226;</span>
-                  <span>Unverified Telegram channels or WhatsApp forwards</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 flex-shrink-0">&#8226;</span>
-                  <span>Social media accounts posting &ldquo;breaking&rdquo; with no official source</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 flex-shrink-0">&#8226;</span>
-                  <span>Videos or images you cannot verify yourself &mdash; do not reshare</span>
-                </li>
-              </ul>
+              <ol className="space-y-1 text-sm list-decimal list-inside" style={{ color: "var(--muted)" }}>
+                <li>Who is saying this? Can I verify their identity?</li>
+                <li>What&apos;s the original source? Can I find it?</li>
+                <li>Are other credible outlets reporting the same thing?</li>
+                <li>Am I being asked to share this urgently? (Red flag.)</li>
+              </ol>
             </div>
           </div>
         </ToggleBlock>
