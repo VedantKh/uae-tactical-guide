@@ -27,7 +27,7 @@ export default function Home() {
           <span className="text-lg leading-6 flex-shrink-0">&#128161;</span>
           <div className="text-sm" style={{ color: "var(--foreground)" }}>
             <p>The situation is tense but fairly stable right now. Power and utilities are all operational, people are recommended to stay indoors but no curfew yet.</p>
-            <p className="mt-2 font-semibold">Civilian mindset: prepare, wait and watch while staying indoors.</p>
+            <p className="mt-2 font-bold">Civilian mindset: prepare, wait and watch while staying indoors.</p>
           </div>
         </div>
       </div>

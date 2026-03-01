@@ -4,10 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/#situation", label: "The situation" },
-  { href: "/#believe", label: "What to believe" },
-  { href: "/#do-now", label: "What we're doing" },
-  { href: "/#news", label: "News to follow" },
+  { href: "/uae-tactical-guide/#situation", label: "The situation" },
+  { href: "/uae-tactical-guide/#believe", label: "What to believe" },
+  { href: "/uae-tactical-guide/#do-now", label: "What we're doing" },
 ];
 
 export default function Sidebar() {
@@ -19,12 +18,24 @@ export default function Sidebar() {
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
         className="fixed top-4 left-4 z-50 md:hidden flex flex-col gap-1 p-2 rounded-md border"
-        style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
+        style={{
+          backgroundColor: "var(--sidebar-bg)",
+          borderColor: "var(--border)",
+        }}
         aria-label="Toggle menu"
       >
-        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
-        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
-        <span className="block w-4 h-0.5" style={{ backgroundColor: "var(--foreground)" }} />
+        <span
+          className="block w-4 h-0.5"
+          style={{ backgroundColor: "var(--foreground)" }}
+        />
+        <span
+          className="block w-4 h-0.5"
+          style={{ backgroundColor: "var(--foreground)" }}
+        />
+        <span
+          className="block w-4 h-0.5"
+          style={{ backgroundColor: "var(--foreground)" }}
+        />
       </button>
 
       {/* Backdrop */}
@@ -40,10 +51,16 @@ export default function Sidebar() {
         className={`fixed left-0 top-0 h-screen w-60 flex flex-col border-r z-40 transition-transform duration-200 ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
-        style={{ backgroundColor: "var(--sidebar-bg)", borderColor: "var(--border)" }}
+        style={{
+          backgroundColor: "var(--sidebar-bg)",
+          borderColor: "var(--border)",
+        }}
       >
         <div className="px-4 py-5">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link
+            href="/"
+            className="flex items-center gap-2 group"
+          >
             <span
               className="text-sm font-semibold tracking-tight"
               style={{ color: "var(--foreground)" }}
@@ -77,7 +94,7 @@ export default function Sidebar() {
           className="px-4 py-4 text-xs border-t"
           style={{ color: "var(--muted)", borderColor: "var(--border)" }}
         >
-          Stay safe. Stay informed.
+          Stay safe people.
         </div>
       </aside>
     </>
