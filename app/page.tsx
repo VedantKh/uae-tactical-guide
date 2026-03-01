@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       {/* Header */}
-      <div className="mb-10">
+      <div className="mb-4">
         <h1
           className="text-4xl font-bold tracking-tight mb-3"
           style={{ color: "var(--foreground)" }}
@@ -14,15 +14,15 @@ export default function Home() {
           UAE Tactical Guide
         </h1>
         <p
-          className="text-base leading-relaxed"
+          className="text-base leading-relaxed mb-4"
           style={{ color: "var(--muted)" }}
         >
-          A report and guide for people in UAE navigating the situation due to the US/Iran conflict.
-        </p>
+          A report and guide for people in UAE navigating the US/Iran conflict.</p>
+          <p>Iran <a href="https://www.reuters.com/world/middle-east/iran-fires-missiles-gulf-arab-states-one-killed-abu-dhabi-2026-02-28/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>launched ballistic missiles</a> toward UAE and other Gulf countries with US military bases, following U.S. and Israeli strikes on Iran, escalating the regional conflict.</p>
       </div>
 
       <div
-        className="h-px w-full mb-8"
+        className="h-px w-full mb-4"
         style={{ backgroundColor: "var(--border)" }}
       />
 
@@ -35,10 +35,6 @@ export default function Home() {
               As of Sunday 1 Mar 2026 (UAE)
             </p>
             <ul className="space-y-2 ml-1" style={{ color: "var(--muted)" }}>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 flex-shrink-0">&#8226;</span>
-                <span>Iran <a href="https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>launched ballistic missiles</a> toward multiple Gulf locations, following U.S. and Israeli strikes on Iran, escalating the regional conflict.</span>
-              </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 flex-shrink-0">&#8226;</span>
                 <span>UAE Ministry of Defence (via WAM) said UAE air defences <a href="https://www.wam.ae/en/article/173jo13-uae-air-defences-intercept-137-missiles-209-drones" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>intercepted 132 missiles and 195 drones</a>.</span>
@@ -56,7 +52,7 @@ export default function Home() {
         </ToggleBlock>
 
         {/* Toggle 2: What to do */}
-        <ToggleBlock id="do-now" title="What to do" defaultOpen>
+        <ToggleBlock id="do-now" title="What to do in case during missiles, blasts, falling debris" defaultOpen>
           <div className="space-y-5 text-sm">
             {/* First 60 seconds */}
             <div>
@@ -68,30 +64,98 @@ export default function Home() {
                   First 60 sec
                 </span>
                 <span className="font-semibold" style={{ color: "var(--foreground)" }}>
-                  If you hear sirens or explosions
+                  Do these immediately
                 </span>
               </div>
-              <ol className="space-y-1.5 ml-1 list-decimal list-inside" style={{ color: "var(--muted)" }}>
-                <li><strong style={{ color: "var(--foreground)" }}>Get inside</strong> &mdash; Move to an interior room away from windows</li>
-                <li><strong style={{ color: "var(--foreground)" }}>Get low</strong> &mdash; Crouch or lie flat, protect your head</li>
-                <li><strong style={{ color: "var(--foreground)" }}>Stay put</strong> &mdash; Do not go outside to look; wait for the all-clear</li>
+              <ol className="space-y-2.5 ml-1 list-decimal list-inside" style={{ color: "var(--muted)" }}>
+                <li><strong style={{ color: "var(--foreground)" }}>Get inside</strong> as fast as you safely can. The biggest risk is <strong style={{ color: "var(--foreground)" }}>glass, debris, and shrapnel</strong>, even when interceptions happen.</li>
+                <li>
+                  <strong style={{ color: "var(--foreground)" }}>Move away from windows.</strong> Go to an <strong style={{ color: "var(--foreground)" }}>interior room</strong>.
+                  <ul className="ml-5 mt-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Best options: <strong style={{ color: "var(--foreground)" }}>windowless bathroom</strong>, closet, or a central corridor.</span>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong style={{ color: "var(--foreground)" }}>Get low and protect your head.</strong>
+                  <ul className="ml-5 mt-1 space-y-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Sit or lie on the floor.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Use a pillow, bag, or blanket if available.</span>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong style={{ color: "var(--foreground)" }}>Do not go to balconies or rooftops</strong> to watch or film.</li>
+                <li>
+                  <strong style={{ color: "var(--foreground)" }}>Stay put</strong> until there is an official update or all-clear.
+                  <ul className="ml-5 mt-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Do not self-evacuate into streets unless authorities instruct it.</span>
+                    </li>
+                  </ul>
+                </li>
               </ol>
             </div>
 
             {/* Specific situations */}
             <div>
               <p className="font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                Specific situations
+                If you are in a specific situation
               </p>
               <div className="space-y-2" style={{ color: "var(--muted)" }}>
                 <div className="rounded-lg p-3 border" style={{ borderColor: "var(--border)" }}>
-                  <p><strong style={{ color: "var(--foreground)" }}>In a high-rise:</strong> Move to a stairwell or interior corridor, away from glass. Do not use elevators.</p>
+                  <p className="mb-1.5"><strong style={{ color: "var(--foreground)" }}>In a high-rise</strong></p>
+                  <ul className="space-y-1 ml-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Go deeper inside the unit (central hallway or bathroom).</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Avoid elevators during an active incident.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Close curtains or blinds <strong style={{ color: "var(--foreground)" }}>only if you can do it safely</strong>. This reduces glass scatter.</span>
+                    </li>
+                  </ul>
                 </div>
                 <div className="rounded-lg p-3 border" style={{ borderColor: "var(--border)" }}>
-                  <p><strong style={{ color: "var(--foreground)" }}>Outside:</strong> Get inside the nearest solid structure. If nothing is available, lie flat in the lowest area you can find.</p>
+                  <p className="mb-1.5"><strong style={{ color: "var(--foreground)" }}>Outside</strong></p>
+                  <ul className="space-y-1 ml-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Go into the nearest solid building.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Avoid glass fa&ccedil;ades, glass canopies, and open promenades.</span>
+                    </li>
+                  </ul>
                 </div>
                 <div className="rounded-lg p-3 border" style={{ borderColor: "var(--border)" }}>
-                  <p><strong style={{ color: "var(--foreground)" }}>Driving:</strong> Pull over safely, get out, and move inside the nearest building. If no building, lie flat in a ditch or low area away from the vehicle.</p>
+                  <p className="mb-1.5"><strong style={{ color: "var(--foreground)" }}>Driving</strong></p>
+                  <ul className="space-y-1 ml-1">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>If you hear blasts or receive an alert: pull over safely and get into the nearest building if possible.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>If you cannot exit safely, stop and <strong style={{ color: "var(--foreground)" }}>duck below the window line</strong>.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 flex-shrink-0">&#8226;</span>
+                      <span>Avoid stopping near fuel stations, bridges, overpasses, or crowds.</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -99,22 +163,38 @@ export default function Home() {
             {/* Debris protocol */}
             <div>
               <p className="font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                Debris protocol
+                Debris protocol (critical)
               </p>
-              <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span><strong style={{ color: "var(--foreground)" }}>Do not touch</strong> any debris &mdash; it may be hazardous or unexploded</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span>Create a wide perimeter and keep others away</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0">&#8226;</span>
-                  <span>Call <a href="tel:999" className="font-mono font-semibold underline">999</a> to report the location</span>
-                </li>
-              </ul>
+              <ol className="space-y-1.5 ml-1 list-decimal list-inside" style={{ color: "var(--muted)" }}>
+                <li><strong style={{ color: "var(--foreground)" }}>Assume debris is dangerous.</strong> It can be sharp, hot, and potentially hazardous.</li>
+                <li><strong style={{ color: "var(--foreground)" }}>Do not touch it</strong> and do not approach.</li>
+                <li><strong style={{ color: "var(--foreground)" }}>Do not photograph it</strong> up close.</li>
+                <li><strong style={{ color: "var(--foreground)" }}>Create a perimeter.</strong> Keep children and bystanders away.</li>
+                <li><strong style={{ color: "var(--foreground)" }}>Report it to authorities.</strong></li>
+                <li>If anyone is injured: <strong style={{ color: "var(--foreground)" }}>call an ambulance immediately</strong>.</li>
+              </ol>
+            </div>
+
+            {/* Emergency numbers */}
+            <div>
+              <p className="font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                Emergency numbers (UAE)
+              </p>
+              <div className="space-y-1.5" style={{ color: "var(--muted)" }}>
+                {[
+                  { label: "Police", number: "999" },
+                  { label: "Ambulance", number: "998" },
+                  { label: "Fire and Civil Defence", number: "997" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <a href={`tel:${item.number}`} className="font-mono font-semibold underline" style={{ color: "var(--foreground)" }}>{item.number}</a>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
+                If it is life-threatening and you are unsure, call <a href="tel:999" className="font-mono font-semibold underline" style={{ color: "var(--foreground)" }}>999</a> and they will route appropriately.
+              </p>
             </div>
 
             {/* Next 2-24 hours */}
@@ -127,21 +207,40 @@ export default function Home() {
                   Next 2&ndash;24 hrs
                 </span>
                 <span className="font-semibold" style={{ color: "var(--foreground)" }}>
-                  Prepare
+                  Reduce risk and stay functional
                 </span>
               </div>
               <ul className="space-y-1.5 ml-1" style={{ color: "var(--muted)" }}>
-                {[
-                  "Charge all phones and portable batteries",
-                  "Locate a flashlight and keep shoes by the bed",
-                  "Prepare a grab bag: IDs, medications, water, phone charger, cash",
-                  "Avoid non-essential travel to airports \u2014 flights may be grounded or diverted",
-                ].map((text, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1 flex-shrink-0">&#8226;</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span>Charge phones and power banks.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span>Keep a flashlight nearby.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span>Keep shoes near you. Glass is a common injury source.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span>
+                    Prep a small grab bag:
+                    <ul className="ml-5 mt-1 space-y-0.5">
+                      {["IDs", "Essential meds", "Water", "Child supplies (if relevant)", "Charger", "Small cash"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1 flex-shrink-0 text-xs">&#9675;</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0">&#8226;</span>
+                  <span>Avoid non-essential airport travel. Flight operations can change rapidly.</span>
+                </li>
               </ul>
             </div>
           </div>
