@@ -54,7 +54,7 @@ export default function Home() {
         </ToggleBlock>
 
         {/* Toggle 2: What to do */}
-        <ToggleBlock id="do-now" title="What to do in case during missiles, blasts, falling debris" defaultOpen>
+        <ToggleBlock id="do-now" title="What to do in case during missiles, blasts, falling debris">
           <div className="space-y-5 text-sm">
             {/* First 60 seconds */}
             <div>
