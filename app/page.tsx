@@ -37,7 +37,7 @@ export default function Home() {
         >
           <span className="text-lg leading-6 flex-shrink-0">&#128161;</span>
           <div className="text-sm" style={{ color: "var(--foreground)" }}>
-            <p>The situation remains tense. Attacks are ongoing with multiple waves. Schools and universities have moved to <strong>distance learning Mon 2 Mar &ndash; Wed 4 Mar</strong>. Airspace is closed, airports suspended. Power and utilities are operational.</p>
+            <p>The situation remains tense. Attacks are ongoing with multiple waves. Schools and universities have moved to distance learning Mon 2 Mar &ndash; Wed 4 Mar. Airspace is closed, airports suspended. Power and utilities are operational.</p>
             <p className="mt-2 font-bold">Stay indoors. Avoid debris zones. Follow NCEMA alerts.</p>
           </div>
         </div>
