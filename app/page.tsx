@@ -5,6 +5,17 @@ import ToggleBlock from "./components/ToggleBlock";
 export default function Home() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
+      {/* Potential Targets Link */}
+      <a
+        href="https://potential-targets.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between rounded-lg px-4 py-3 mb-6 border text-sm font-medium transition-colors"
+        style={{ borderColor: "var(--tag-red)", backgroundColor: "var(--tag-red)", color: "var(--tag-red-text)" }}
+      >
+        <span>View Potential Targets Map &rarr;</span>
+      </a>
+
       {/* Header */}
       <div className="mb-4">
         <h1
@@ -26,8 +37,8 @@ export default function Home() {
         >
           <span className="text-lg leading-6 flex-shrink-0">&#128161;</span>
           <div className="text-sm" style={{ color: "var(--foreground)" }}>
-            <p>The situation is tense but fairly stable right now. Power and utilities are all operational, people are recommended to stay indoors but no curfew yet.</p>
-            <p className="mt-2 font-bold">Civilian mindset: prepare, wait and watch while staying indoors.</p>
+            <p>The situation remains tense. Attacks are ongoing with multiple waves. Schools and universities have moved to <strong>distance learning Mon 2 Mar &ndash; Wed 4 Mar</strong>. Airspace is closed, airports suspended. Power and utilities are operational.</p>
+            <p className="mt-2 font-bold">Stay indoors. Avoid debris zones. Follow NCEMA alerts.</p>
           </div>
         </div>
       </div>
@@ -43,13 +54,48 @@ export default function Home() {
         <ToggleBlock id="situation" title="The situation">
           <div className="space-y-4 text-sm" style={{ color: "var(--foreground)" }}>
             <p className="text-xs font-medium mb-3" style={{ color: "var(--muted)" }}>
-              As of Sunday 1 Mar 2026 (UAE)
+              As of Monday 2 Mar 2026 (UAE)
             </p>
             <ul className="space-y-2 ml-4 list-disc list-outside" style={{ color: "var(--muted)" }}>
-              <li>UAE Ministry of Defence (via WAM) said UAE air defences <a href="https://www.wam.ae/en/article/173jo13-uae-air-defences-intercept-137-missiles-209-drones" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>intercepted 132 missiles and 195 drones</a>.</li>
-              <li><a href="https://gulfnews.com/uae/pakistani-national-in-uae-dies-as-iranian-missiles-intercepted-amid-us-israel-strikes-1.500458618" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>One civilian was killed in Abu Dhabi</a> from falling debris. 4 people were injured in Dubai after debris caused a <a href="https://www.reuters.com/world/middle-east/iran-missiles-brings-war-gulf-doorstep-hardens-support-usisrael-campaign-2026-02-28/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>building fire on Palm Jumeirah</a>.</li>
-              <li>Dubai International (DXB) and Abu Dhabi airports <a href="https://www.thenationalnews.com/business/aviation/2026/02/28/airlines-suspend-flights-amid-us-israel-strikes-on-iran-and-gulf-airspace-closures/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>suspended operations</a>, multiple airlines halted routes, and UAE airspace was closed nationally.</li>
+              <li>UAE Ministry of Defence confirmed air defences have <a href="https://gulfnews.com/uae/uae-intercepts-missiles-drones-in-iranian-attack-latest-updates-so-far-1.500459345" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>intercepted 165 ballistic missiles, 2 cruise missiles, and 541 drones</a> since Saturday.</li>
+              <li><a href="https://gulfnews.com/uae/us-israel-war-on-iran-escalates-uae-airlines-extend-flight-cancellations-1.500459372" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>3 people killed and 58 injured</a> across the UAE. One killed at <a href="https://www.thenationalnews.com/news/uae/2026/03/01/iran-missile-attacks-uae-deaths/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>Zayed International Airport</a> (drone interception), one in Abu Dhabi from falling debris, and one at Jebel Ali.</li>
+              <li>A <a href="https://www.aljazeera.com/news/2026/3/1/more-blasts-rock-dubai-doha-and-manama-as-iran-targets-us-assets-in-gulf" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>second wave of strikes</a> hit Dubai and Abu Dhabi on Sunday morning (1 Mar). Attacks are ongoing.</li>
+              <li>All airports remain suspended. UAE airspace closed. <a href="https://whichschooladvisor.com/uae/school-news/missile-interceptions-will-uae-schools-open-on-monday" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>Schools shifted to distance learning</a> Mon 2 Mar &ndash; Wed 4 Mar.</li>
+              <li><a href="https://www.thenationalnews.com/news/uae/2026/03/01/iran-missile-attacks-uae-deaths/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>UAE closed its embassy in Tehran</a> and recalled its ambassador.</li>
             </ul>
+
+            {/* Affected locations */}
+            <div className="mt-4">
+              <p className="font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                Affected locations &mdash; areas to be cautious around
+              </p>
+              <p className="text-xs mb-3" style={{ color: "var(--muted)" }}>
+                These areas experienced debris, fires, or direct damage. Avoid non-essential travel to these zones. Sources: <a href="https://www.wam.ae/en/article/byyv9j5-uae-announces-successful-interception-several" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>WAM</a>, <a href="https://www.thenationalnews.com/news/uae/2026/03/01/woman-and-child-among-injured-on-day-two-of-iranian-attacks-on-the-uae/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>The National</a>, <a href="https://gulfnews.com/uae/uae-intercepts-missiles-drones-in-iranian-attack-latest-updates-so-far-1.500459345" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--foreground)" }}>Gulf News</a>
+              </p>
+              <div className="space-y-2">
+                <div className="rounded-lg p-3 border" style={{ borderColor: "var(--border)" }}>
+                  <p className="mb-1.5"><strong style={{ color: "var(--foreground)" }}>Dubai</strong></p>
+                  <ul className="space-y-1 ml-4 list-disc list-outside">
+                    <li><strong style={{ color: "var(--foreground)" }}>Palm Jumeirah</strong> &mdash; Fairmont The Palm hotel fire from strike; 4 injuries reported.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Jebel Ali Port</strong> &mdash; Berth fire from intercepted missile debris. Port operations suspended. Accounts for 36% of Dubai&apos;s GDP.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Burj Al Arab</strong> &mdash; Facade fire from falling debris, contained quickly. No injuries.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Dubai International Airport (DXB)</strong> &mdash; A concourse sustained minor damage. All flights suspended.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Burj Khalifa / Dubai Marina area</strong> &mdash; Debris reported in residential areas nearby.</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg p-3 border" style={{ borderColor: "var(--border)" }}>
+                  <p className="mb-1.5"><strong style={{ color: "var(--foreground)" }}>Abu Dhabi</strong></p>
+                  <ul className="space-y-1 ml-4 list-disc list-outside">
+                    <li><strong style={{ color: "var(--foreground)" }}>Zayed International Airport</strong> &mdash; Drone interception incident; 1 killed, 7 injured.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Etihad Towers</strong> &mdash; Drone debris hit building housing Conrad Hotel and diplomatic missions; woman and child injured.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Al Salam Naval Base</strong> &mdash; Two Iranian drones struck the base, causing a fire.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Saadiyat Island</strong> &mdash; Intercepted missile debris reported in the area.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Khalifa City / Mohamed Bin Zayed City / Beni Yas / Al Falah</strong> &mdash; Debris from interceptions fell across these residential areas.</li>
+                    <li><strong style={{ color: "var(--foreground)" }}>Main port (Mina Zayed)</strong> &mdash; Fire from debris, contained by authorities.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </ToggleBlock>
 
